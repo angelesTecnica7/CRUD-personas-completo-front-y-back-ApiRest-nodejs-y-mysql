@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CRUD Personas mockapi, imgbb</title>
+</head>
+
+<body>
+    <div id="contenedor">
+        <header>
+            <h1>CRUD PERSONAS localStorage</h1>
+        </header>
+        <p class="mensajes">Area de mensajes</p>
+        <main>
+            <button id="btn-agregar">Agregar Persona</button>
+            <section id="formularios">
+
+                <form id="form-buscar">
+                    <h3>Buscar Personas</h3>
+                    <input type="text" name="nombre" placeholder="Ingrese nombre a Buscar">
+                    <input type="text" name="dni" placeholder="Ingrese dni a Buscar">
+                    <input type="submit" name="submit" value="Buscar">
+                </form>
+                <div class="limpiar"><button id="btn-filtros">Limpiar Filtros</button></div>
+                
+                <form id="form-agregar">
+                    <div class="cerrar"><button class="btn-cerrar-formAgregar">X</button></div>
+                    <h3>Agregar Persona</h3>
+                    <input type="text" name="nombre" placeholder="Ingrese Nombre" required>
+                    <input type="number" name="edad" placeholder="Ingrese Edad" required>
+                    <input type="text" name="dni" placeholder="Ingrese DNI" required>
+                    <input type="file" id="imageInput" name="imagen" accept="image/*"/>
+                    <input type="submit" name="submit" value="Agregar">
+                </form>
+
+                <form id="form-modificar">
+                    <!-- El html de este formulario esta en modulo mostrarformModificar() -->                   
+                </form>
+
+            </section>
+
+            <section id="listado">
+                <h3>Listado de Personas</h3>
+                <div id="listadoPersonas">
+             
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>7mo 1ra PROG. grupo "A"</p>
+            <p>Sitios Web Dinámicos</p>
+        </footer>
+        <script src="./js/mostrarMensajes.js"></script>
+        <script src="./js/eventos.js"></script>
+        <script src="./js/modulos.js"></script>
+    </div>
+</body>
+
+</html>

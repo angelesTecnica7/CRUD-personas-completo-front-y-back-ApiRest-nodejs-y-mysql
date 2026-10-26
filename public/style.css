@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri
+}
+
+#contenedor {
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+  
+}
+section {
+    width: 95%;
+    margin: 0 auto;
+}
+header, footer {
+    background: black;
+    color: #ccc;
+    margin: 10 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+
+form, .persona{   
+    margin: auto;
+    width: 95%;
+    border: 1px solid #000;
+    border-radius: 5px;;
+    padding: 10px;
+    margin: 10px auto;
+}
+input {
+    display: block;
+    padding: 5px;
+    margin: 5px auto;
+    width: 100%;
+}
+
+button, input[type="submit"] {
+    padding: 10px;
+    background: #ccc;
+    border: #666;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background: lightblue;
+}
+.cerrar, .limpiar {
+  text-align: right;
+}
+.persona {
+    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.persona button {
+    display: block;
+    width: 100px;
+}
+
+.imagen img {
+    width: 100px;
+    height: auto;
+    justify-self: center;
+}
+
+.mensajes {
+    display: none;
+    background-color: rgb(89, 89, 205);
+    color: lightblue;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px auto;;
+    width: 95%;
+    max-width: 400px;
+    z-index: 3000;
+}
+
+#form-agregar, #form-modificar {
+    display: none;
+}
+
+
