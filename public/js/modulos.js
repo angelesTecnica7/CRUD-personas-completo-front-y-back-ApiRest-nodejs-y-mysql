@@ -112,6 +112,7 @@ const mostrarformModificar = (nombreActual, edadActual, dni, id, imagen) => {
                     <input type="text" name="edad" value="${edadActual}" required>
                     <input type="text" name="dni" value="${dni}">
                     <input type="hidden" name="id" value="${id}">
+                    <input type="hidden" name="imgActual" value="${imagen}">
                     <input type="file" id="imageInput" name="imagen" accept="image/*" />
                     <input type="submit" name="submit" value="Modificar">
     `
@@ -128,7 +129,6 @@ const modificarPersona = async (id, nuevosDatosPersona) => {
             body: JSON.stringify(nuevosDatosPersona)
         })
         if (res.ok) {
-            arrayPersonas = await res.json()
             //mensaje
             mostrarMensaje('Registro Actualizado')
         }
@@ -162,8 +162,6 @@ const eliminarPersona = async (id) => {
 
 //funcion para buscar Personas por nombre o dni
 const buscarPersonas = async (nombre, dni) => {
-
-    console.log(nombre, dni)
 
     //inicializamos el contenedor del listado
     contenedorPersonas = document.querySelector('#listadoPersonas')

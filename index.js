@@ -11,9 +11,10 @@ app.use(express.static('./public'))
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.send('API Rest Mysql')
-})
+
+// app.get('/', (req, res) => {
+//     res.send('API Rest Mysql')
+// })
 
 //Obtener todos los registros
 app.get('/personas', async (req, res) => {
@@ -48,6 +49,7 @@ app.get('/personas/buscar', async (req, res) => {
 
         connection.release(); //libera conexion   
         res.json(rows)
+
     } catch (error) {
         res.status(500).send('ERROR, no se pudo realizar la consulta')
     }
@@ -91,6 +93,7 @@ app.get('/personas/:id', async (req, res) => {
         res.status(500).send('ERROR, no se pudo realizar la consulta')
     }
 })
+
 //Escribir un nuevo registro
 app.post('/personas', async (req, res) => {
     const values = req.body
@@ -105,7 +108,7 @@ app.post('/personas', async (req, res) => {
 
         connection.release();
 
-        console.log(rows)
+        // console.log(rows)
         //rows devuelve muchos datos entre ellos el id creado que lo uso para el send, insertId
         res.status(201).send(`Registro creado con id ${rows.insertId}`)
     } catch (error) {
@@ -154,4 +157,4 @@ app.use((req, res) => {
     res.status(404).send('Pagina inexistente')
 })
 
-app.listen(PORT, () => { console.log(`Servidor corriendo en http://localhost:${PORT}`) })
+app.listen(PORT, () => { console.log(`Servidor corriendo en puerto ${PORT}`) })
