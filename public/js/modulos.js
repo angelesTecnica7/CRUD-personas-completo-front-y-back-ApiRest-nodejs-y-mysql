@@ -1,6 +1,6 @@
 //Modulo para guardar imagen en imgBB
 const subirImg = async (formData) => {
-    const apiKey = process.env.API_KEY_IMGBB; // Poné acá tu API Key de ImgBB
+    const apiKey = '1c1ff0a95bdbfdfde7bb31bbd260d7f3'; // Poné acá tu API Key de ImgBB
     console.log('Subiendo imagen, por favor espera...')
 
     try {
