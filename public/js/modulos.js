@@ -30,7 +30,7 @@ const subirImg = async (formData) => {
 }
 
 // const API_URL = '/personas'
-const API_URL = 'https://crud-personas-completo-front-y-back.onrender.com/personas' || '/personas'
+const API_URL = 'https://crud-personas-completo-front-y-back.onrender.com/personas'
 
 //funcion agregarPersona
 const agregarPersona = async (nuevaPersona) => {
@@ -125,7 +125,7 @@ const mostrarformModificar = (nombreActual, edadActual, dni, id, imagen) => {
 //funcion modificar Datos de una persona
 const modificarPersona = async (id, nuevosDatosPersona) => {
     try {
-        const res = await fetch(`API_URL/${id}`, {
+        const res = await fetch(`${API_URL}/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(nuevosDatosPersona)
@@ -146,7 +146,7 @@ const eliminarPersona = async (id) => {
     if (confirm('Seguro desea eliminar este registro?')) {
         //hacemos la peticion de borrado a la api mockapi
         try {
-            const res = await fetch(`API_URL/${id}`, {
+            const res = await fetch(`${API_URL}/${id}`, {
                 method: 'DELETE',
             })
             if (res.ok) {
@@ -170,7 +170,7 @@ const buscarPersonas = async (nombre, dni) => {
     contenedorPersonas.innerHTML = " "                                                  
 
     try {
-        const res = await fetch(`API_URL/buscar?nombre=${nombre}&dni=${dni}`, {
+        const res = await fetch(`${API_URL}/buscar?nombre=${nombre}&dni=${dni}`, {
             method: 'GET',
             headers: { 'content-type': 'application/json' },
         })
