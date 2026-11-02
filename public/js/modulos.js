@@ -168,7 +168,7 @@ const buscarPersonas = async (nombre, dni) => {
     contenedorPersonas.innerHTML = " "                                                  
 
     try {
-        const res = await fetch(`http://localhost:3000/personas/buscar?nombre=${nombre}&dni=${dni}`, {
+        const res = await fetch(`/personas/buscar?nombre=${nombre}&dni=${dni}`, {
             method: 'GET',
             headers: { 'content-type': 'application/json' },
         })
